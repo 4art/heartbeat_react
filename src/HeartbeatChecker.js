@@ -6,6 +6,8 @@ import './HeartbeatChecker.css'; // Make sure to create this CSS file
 const HeartbeatChecker = () => {
   const [dbActive, setDbActive] = useState(false);
   const [checked, setChecked] = useState(false);
+  const backendUrl = window._env_ ? window._env_.REACT_APP_BACKEND_URL : process.env.REACT_APP_BACKEND_URL;
+
 
   useEffect(() => {
     axios.get(`${process.env.REACT_APP_BACKEND_URL}/heartbeat`)

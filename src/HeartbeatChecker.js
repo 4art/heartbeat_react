@@ -10,7 +10,7 @@ const HeartbeatChecker = () => {
 
 
   useEffect(() => {
-    axios.get(`${process.env.REACT_APP_BACKEND_URL}/heartbeat`)
+    axios.get(`${backendUrl}/heartbeat`)
       .then(response => {
         if (response.data.dbActive) {
           setDbActive(true);
